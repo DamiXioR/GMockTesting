@@ -6,4 +6,5 @@
 class TestClass {
 public:
 	int ifResultNeededGetResult(AnotherClass& anotherClass, ElseClass& elseClass);
+
 };

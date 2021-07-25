@@ -20,6 +20,7 @@ TEST(TestingClass, ShouldWork){
 	EXPECT_EQ(sut.ifResultNeededGetResult(anotherClass, elseClass),0);
 
 	//BARDZO WAŻNE, jeśli nie dodamy EXPECT_CALL dla danej funkcji, to dla int zwróci 0, a dla bool zwróci false
+	//żeby sprawdzić, jakie zwraca wartości defaultowe najlepiej zamienić NiceMock na StrictMock i zobaczyć warningi
 
 }
 

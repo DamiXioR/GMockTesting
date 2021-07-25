@@ -16,5 +16,6 @@ int TestClass::ifResultNeededGetResult(AnotherClass& anotherClass, ElseClass& el
 		}
 		return securityPass;
 	} 
+	
 	return 777;
 }	
