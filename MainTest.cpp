@@ -14,10 +14,12 @@ TEST(TestingClass, ShouldWork){
 	TestClass sut;
 
 	bool checker{true};
-	//int number{-100};
+	int number{-100};
+	std::string text{"controller < 0"};
 	EXPECT_CALL(anotherClass, isResultNeeded()).WillOnce(Return(checker));
-	//ON_CALL(elseClass, getResult()).WillByDefault(Return(number));
-	EXPECT_EQ(sut.ifResultNeededGetResult(anotherClass, elseClass),0);
+	EXPECT_CALL(elseClass, getResult()).WillOnce(Return(number));
+	EXPECT_CALL(elseClass, showText(text));
+	EXPECT_EQ(sut.ifResultNeededGetResult(anotherClass, elseClass),-1);
 
 	//BARDZO WAŻNE, jeśli nie dodamy EXPECT_CALL dla danej funkcji, to dla int zwróci 0, a dla bool zwróci false
 	//żeby sprawdzić, jakie zwraca wartości defaultowe najlepiej zamienić NiceMock na StrictMock i zobaczyć warningi

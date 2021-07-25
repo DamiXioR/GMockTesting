@@ -8,14 +8,17 @@ int TestClass::ifResultNeededGetResult(AnotherClass& anotherClass, ElseClass& el
 		int securityPass{0};
 
 		if(controller > 0) {
+			elseClass.showText("controller > 0");
 			securityPass = 1;
 		} else if (controller < 0) {
+			elseClass.showText("controller < 0");
 			securityPass = -1;
 		} else {
+			elseClass.showText("controller == 0");
 			securityPass = 0;
 		}
 		return securityPass;
 	} 
-	
+
 	return 777;
 }	
